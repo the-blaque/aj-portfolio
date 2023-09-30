@@ -1,0 +1,26 @@
+.landing-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: #000000; /* Pure black */
+    color: #FFFFFF; /* Pure white */
+  }
+  
+  .name {
+    font-size: 2rem;
+    margin-top: 1rem;
+    transition: color 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  .instructions {
+    margin-top: 2rem;
+    font-size: 1rem;
+  }
+  
+  /* Hover effect for name, changing color to orange */
+  .name:hover {
+    color: #FFA500; /* This is a generic orange color; replace with your specific hex code when provided */
+  }
+  

@@ -1,0 +1,16 @@
+.roadmap-container {
+    padding: 2rem;
+    background-color: #000000; /* Pure black */
+    color: #FFFFFF; /* Pure white */
+  }
+  
+  .roadmap-container a {
+    color: #FFFFFF; /* Pure white */
+    text-decoration: none;
+    transition: color 0.3s ease; /* Smooth transition for hover effects */
+  }
+  
+  .roadmap-container a:hover {
+    color: #FFA500; /* Orange color for hover */
+  }
+  
