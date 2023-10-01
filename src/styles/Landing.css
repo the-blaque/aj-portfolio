@@ -18,30 +18,30 @@
   opacity: 0; /* Initially hidden */
 }
 
-.name::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  right: 0;
-  width: .1em;
-  height: 100%;
-  background-color: #FFFFFF; /* Cursor color */
-  animation: 
-    blinkCursorBeforeTyping 0.4s step-end 1.5s 3, /* Blinking before typing */
-    blinkCursorAfterTyping 0.5s step-end 4.1s infinite; /* Blinking after typing */
-}
-
 .name {
   font-size: 2rem;
   margin-top: .2rem;
   transition: color 0.2s ease;
   white-space: nowrap; /* Keeps content on a single line */
   overflow: hidden; /* Keeps content hidden until "typed" */
-  width: 17ch; /* Width of content */
+  width: 0ch; /* Initially set to 0 to hide the text */
   position: relative; /* To position the pseudo-element */
   opacity: 1; /* Make the name (and cursor) visible */
   color: transparent; /* Hide the text content initially */
   animation: typeEffect 1.2s steps(17, end) 2.7s forwards; /* Typing effect */
+}
+
+.name::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0; /* Start the cursor at the beginning of the text */
+  width: .1em;
+  height: 100%;
+  background-color: #FFFFFF; /* Cursor color */
+  animation: 
+    blinkCursorBeforeTyping 0.4s step-end 1.5s 3, /* Blinking before typing */
+    blinkCursorAfterTyping 0.5s step-end 4.1s infinite; /* Blinking after typing */
 }
 
 .instructions {
