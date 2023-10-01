@@ -1,26 +1,95 @@
 .landing-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 100vh;
-    background-color: #000000; /* Pure black */
-    color: #FFFFFF; /* Pure white */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  background-color: #000000;
+  color: #FFFFFF;
+}
+
+.lottie-animation {
+  width: 75%; 
+  max-width: 375px; 
+  margin-bottom: 0.2rem; 
+}
+
+.instructions {
+  opacity: 0; /* Initially hidden */
+}
+
+.name::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: .1em;
+  height: 100%;
+  background-color: #FFFFFF; /* Cursor color */
+  animation: 
+    blinkCursorBeforeTyping 0.4s step-end 1.5s 3, /* Blinking before typing */
+    blinkCursorAfterTyping 0.5s step-end 4.1s infinite; /* Blinking after typing */
+}
+
+.name {
+  font-size: 2rem;
+  margin-top: .2rem;
+  transition: color 0.2s ease;
+  white-space: nowrap; /* Keeps content on a single line */
+  overflow: hidden; /* Keeps content hidden until "typed" */
+  width: 17ch; /* Width of content */
+  position: relative; /* To position the pseudo-element */
+  opacity: 1; /* Make the name (and cursor) visible */
+  color: transparent; /* Hide the text content initially */
+  animation: typeEffect 1.2s steps(17, end) 2.7s forwards; /* Typing effect */
+}
+
+.instructions {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #FFA500; /* Orange color */
+  animation: fadeInUp 1.9s 3.3s forwards; /* Fade in and move up animation with a delay */
+}
+
+/* Hover effect for name, changing color to orange */
+.name:hover {
+  color: #FFA500; 
+}
+
+/* Typing effect */
+@keyframes typeEffect {
+  0% { 
+    width: 0; 
+    color: transparent; /* Keep the text content hidden */
   }
-  
-  .name {
-    font-size: 2rem;
-    margin-top: 1rem;
-    transition: color 0.3s ease; /* Smooth transition for hover effects */
+  1% { 
+    color: #FFFFFF; /* Show the text content */
   }
-  
-  .instructions {
-    margin-top: 2rem;
-    font-size: 1rem;
+  100% { 
+    width: 17ch; 
+    color: #FFFFFF; 
   }
-  
-  /* Hover effect for name, changing color to orange */
-  .name:hover {
-    color: #FFA500; /* This is a generic orange color; replace with your specific hex code when provided */
+}
+
+/* Cursor blinking effect before typing */
+@keyframes blinkCursorBeforeTyping {
+  from, to { background-color: transparent; }
+  50% { background-color: #FFFFFF; }
+}
+
+/* Cursor blinking effect after typing */
+@keyframes blinkCursorAfterTyping {
+  from, to { background-color: transparent; }
+  50% { background-color: #FFFFFF; }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(2rem);
   }
-  
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
