@@ -6,6 +6,17 @@
   height: 100vh;
   background-color: #000000;
   color: #FFFFFF;
+  position: relative; /* Added for absolute positioning of the contact overlay */
+}
+
+.title-year {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+.title-year h1, .title-year p {
+  margin: 0;
 }
 
 .lottie-animation {
@@ -14,8 +25,43 @@
   margin-bottom: 0.2rem; 
 }
 
-.instructions {
+.tagline {
+  font-size: 1.5rem;
+  margin-top: 1rem;
   opacity: 0; /* Initially hidden */
+  animation: fadeInUp 1.9s 3.8s forwards; /* Adjusted delay */
+}
+
+.quote {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  opacity: 0; /* Initially hidden */
+  animation: fadeInUp 1.9s 4.5s forwards; /* Adjusted delay */
+}
+
+.instructions {
+  margin-top: 2rem;
+  font-size: 1rem;
+  color: #FFA500; /* Orange color */
+  animation: fadeInUp 1.9s 5.2s forwards; /* Adjusted delay */
+}
+
+.contact-overlay {
+  position: absolute;
+  bottom: 10px;
+  right: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.contact-overlay a {
+  color: #FFA500;
+  text-decoration: none;
+}
+
+.contact-overlay a:hover {
+  text-decoration: underline;
 }
 
 .name::before {
