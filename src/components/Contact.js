@@ -5,8 +5,8 @@ function Contact() {
   return (
     <div className="contact-container">
       <div className="contact-labels">
-        <span>[MAIL]</span>
-        <span>[LINKEDIN]</span>
+        <a href="mailto:oluwaseeni.ajayi@gmail.com">[MAIL]</a>
+        <a href="https://www.linkedin.com/in/oluwaseeni-ajayi/">[LINKEDIN]</a>
       </div>
       <div className="contact-details">
         <a href="mailto:oluwaseeni.ajayi@gmail.com">OLUWASEENI.AJAYI@GMAIL.COM</a>

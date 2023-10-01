@@ -5,43 +5,28 @@
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  font-size: 0.65rem; 
+  font-size: 0.75rem; 
   color: #FFA500; 
 }
 
-.contact-labels {
-  display: flex;
-  justify-content: space-around; /* This will space out the items evenly */
-  width: 100%; /* Take the full width available */
-  gap: 0.5rem; /* Add space between items */
-  align-items: center; /* This will vertically center the items */
-}
-
+.contact-labels,
 .contact-details {
   display: flex;
-  justify-content: space-between; /* This will space out the items evenly */
-  width: 100%; /* Take the full width available */
-  gap: 0.5rem; /* Add space between items */
+  justify-content: space-around;
+  width: 100%;
+  gap: 0.5rem;
+  align-items: center;
 }
 
-.contact-labels a {
+.contact-labels a,
+.contact-details a {
   text-decoration: none;
-  color: #FFA500; /* Set the link color to orange */
+  color: #FFA500;
   transition: color 0.2s ease;
-  margin: 0 0.5rem; /* Add horizontal margin to space out the links */
+  margin: 0 0.5rem;
 }
 
-.contact-details a:hover {
-  color: #FFFFFF; 
-}
-
-.contact-labels a {
-  text-decoration: none;
-  color: #FFA500; /* Set the link color to orange */
-  transition: color 0.2s ease;
-  margin: 0 0.5rem; /* Add horizontal margin to space out the links */
-}
-
+.contact-labels a:hover,
 .contact-details a:hover {
   color: #FFFFFF; 
 }
