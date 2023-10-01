@@ -18,19 +18,6 @@
   opacity: 0; /* Initially hidden */
 }
 
-.name {
-  font-size: 2rem;
-  margin-top: .2rem;
-  transition: color 0.2s ease;
-  white-space: nowrap; /* Keeps content on a single line */
-  overflow: hidden; /* Keeps content hidden until "typed" */
-  width: 0ch; /* Initially set to 0 to hide the text */
-  position: relative; /* To position the pseudo-element */
-  opacity: 1; /* Make the name (and cursor) visible */
-  color: transparent; /* Hide the text content initially */
-  animation: typeEffect 1.2s steps(17, end) 2.7s forwards; /* Typing effect */
-}
-
 .name::before {
   content: '';
   position: absolute;
@@ -38,10 +25,26 @@
   left: 0; /* Start the cursor at the beginning of the text */
   width: .1em;
   height: 100%;
-  background-color: #FFFFFF; /* Cursor color */
+  background-color: transparent; /* Cursor color initially transparent */
+  z-index: 1;
   animation: 
-    blinkCursorBeforeTyping 0.4s step-end 1.5s 3, /* Blinking before typing */
-    blinkCursorAfterTyping 0.5s step-end 4.1s infinite; /* Blinking after typing */
+    blinkCursorBeforeTyping 0.4s step-end 1.5s infinite, /* Blinking before typing */
+    moveCursor 1.2s steps(17, end) 2.2s forwards, /* Move cursor with typing */
+    blinkCursorAfterTyping 0.4s step-end 4.1s infinite; /* Blinking after typing */
+}
+
+.name {
+  font-size: 2rem;
+  margin-top: .2rem;
+  transition: color 0.2s ease;
+  white-space: nowrap; /* Keeps content on a single line */
+  overflow: hidden; /* Keeps content hidden until "typed" */
+  width: 17ch; /* Width of content */
+  position: relative; /* To position the pseudo-element */
+  opacity: 1; /* Make the name (and cursor) visible */
+  color: transparent; /* Hide the text content initially */
+  z-index: 0;
+  animation: typeEffect 1.2s steps(17, end) 2.7s forwards; /* Typing effect */
 }
 
 .instructions {
@@ -71,16 +74,28 @@
   }
 }
 
+/* Move cursor with typing */
+@keyframes moveCursor {
+  0% {
+    left: 0;
+    background-color: #808080;
+  }
+  100% {
+    left: calc(17ch - 0.1em); /* Move cursor to the end, subtracting its own width */
+    background-color: #808080;
+  }
+}
+
 /* Cursor blinking effect before typing */
 @keyframes blinkCursorBeforeTyping {
   from, to { background-color: transparent; }
-  50% { background-color: #FFFFFF; }
+  50% { background-color: #808080; }
 }
 
 /* Cursor blinking effect after typing */
 @keyframes blinkCursorAfterTyping {
   from, to { background-color: transparent; }
-  50% { background-color: #FFFFFF; }
+  50% { background-color: #808080; }
 }
 
 @keyframes fadeInUp {
