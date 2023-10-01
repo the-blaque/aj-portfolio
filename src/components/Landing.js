@@ -15,7 +15,7 @@ function Landing() {
       <h2 className="name">I am Oluwaseeni Ajayi</h2>
       <p className="tagline">Coder. Creator. Adventurer. Building Dreams, One Story at a Time.</p>
       <p className="quote">"It is not how fast, but how well." - Oluwakemi Ajayi</p>
-      <p className="instructions">EMBARK ON MY ODYSSEY.</p>
+      <p className="instructions">↑ EMBARK ON MY ODYSSEY ↑</p>
       <Contact /> {/* Uses the contact component as "footer"*/}
     </div>
   );
