@@ -5,6 +5,7 @@
   justify-content: center;
   height: 100vh;
   background-color: #000000;
+  z-index: -1;
   color: #FFFFFF;
   position: relative; /* Added for absolute positioning of the contact overlay */
 }
@@ -34,13 +35,14 @@
 .lottie-animation {
   width: 75%; 
   max-width: 375px; 
-  margin-bottom: 0.2rem; 
+  z-index: 0; 
+  margin-bottom: 0;
 }
 
 .tagline {
   font-size: 1.5rem;
   font-weight: 640;
-  margin-top: .3rem;
+  margin-top: .1rem;
   opacity: 0; /* Initially hidden */
   animation: fadeInUp 1.5s 4.3s forwards; /* Adjusted delay */
 }
@@ -48,13 +50,13 @@
 .quote {
   font-size: 1.2rem;
   font-weight: 595;
-  margin-top: 1rem;
+  margin-top: .1rem;
   opacity: 0; /* Initially hidden */
   animation: fadeInUp 1.5s 4.5s forwards; /* Adjusted delay */
 }
 
 .instructions {
-  margin-top: 2rem;
+  margin-top: .25rem;
   font-size: 1rem;
   font-weight: 555;
   color: #FFA500; /* Orange color */
@@ -70,7 +72,7 @@
   width: .1em;
   height: 100%;
   background-color: transparent; /* Cursor color initially transparent */
-  z-index: 1;
+  z-index: 2;
   animation: 
     blinkCursorBeforeTyping 0.4s step-end 1.5s infinite, /* Blinking before typing */
     moveCursor 1.2s steps(17, end) 2.2s forwards, /* Move cursor with typing */
@@ -79,7 +81,8 @@
 
 .name {
   font-size: 2rem;
-  margin-top: .2rem;
+  margin-top: -7rem;
+  margin-bottom: 0;
   transition: color 0.2s ease;
   white-space: nowrap; /* Keeps content on a single line */
   overflow: hidden; /* Keeps content hidden until "typed" */
@@ -87,7 +90,7 @@
   position: relative; /* To position the pseudo-element */
   opacity: 1; /* Make the name (and cursor) visible */
   color: transparent; /* Hide the text content initially */
-  z-index: 0;
+  z-index: 1;
   animation: typeEffect 1.2s steps(17, end) 2.7s forwards; /* Typing effect */
 }
 
